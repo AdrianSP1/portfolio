@@ -1,0 +1,6 @@
+<h1>Todos mis trabajos</h1>
+
+{% for job in jobs.all %}
+{{ job.sumary }} - {{ job.image.url }}
+<br>
+{% endfor %}

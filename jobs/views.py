@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from .models import Job
 
-def adrian(request):
-    return render(request,'jobs/adrian.html')
+
+def home(request):
+    jobs = Job.objects
+    return render(request,'jobs/home.html',{'jobs':jobs})
