@@ -1,6 +1,63 @@
-<h1>Todos mis trabajos</h1>
+<!doctype html>
+<html lang="es">
+    {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <title>Adrian Spinosi</title>
 
-{% for job in jobs.all %}
-{{ job.sumary }} - {{ job.image.url }}
-<br>
-{% endfor %}
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/album/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css'%}">
+  <body>
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <img class="container">
+      <h1>Adrian Spinosi</h1>
+      <p class="lead text-muted">Hola mi nombre es Adrian, trabajo haciendo apps y sitios web. Y me gusta practicar tenis.</p>
+      <p>
+        <a href="mailto:adriangustavose@gmail.com" class="btn btn-primary my-2">Contactame</a>
+      </p>
+      <img src="{% static 'adrian.jpg' %}" height="300"></img> <!-- aca va la direccion estatica de la imagen que esta en el proyecto-->
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+          {% for job in job.all %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow">
+              <img class="card-img-top" src="{{ job.image.url }}">
+            <div class="card-body">
+              <p class="card-text">{{ job.sumary }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</main>
+
+<!--Bootstrap Javascript Core
+================================================ -->
+<!--Se coloca al final del documento(html) para que la pagina cargue mas rapido-->
+<script src="{% static 'jquery-3.3.1.min.js'%}"></script> 
+<script src="{% static 'popper.min.js'%}" ></script>
+<script src="{% static 'bootstrap.min.js'%}" ></script>
+      
+  </body>
+</html>
