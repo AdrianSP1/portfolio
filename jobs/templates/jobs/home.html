@@ -9,9 +9,6 @@
     <link rel="icon" href="../../../../favicon.ico">
     <title>Adrian Spinosi</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/album/">
-
-    
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{% static '/css/bootstrap.min.css'%}">
@@ -34,12 +31,12 @@
     <div class="container">
 
       <div class="row">
-          {% for job in job.all %}
+          {% for job in jobs.all %}
         <div class="col-md-4">
           <div class="card mb-4 shadow">
               <img class="card-img-top" src="{{ job.image.url }}">
             <div class="card-body">
-              <p class="card-text">{{ job.sumary }}</p>
+              <p class="card-text">{{ job.summary }}</p>
               </div>
             </div>
           </div>
